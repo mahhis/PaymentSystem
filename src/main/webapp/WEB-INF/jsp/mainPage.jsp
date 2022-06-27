@@ -92,5 +92,8 @@
     <input type="submit" value="Press me" />
 </form>
 
+<a href="Controller?command=GoToTransactionListPage">My orders</a>
+
+
 </body>
 </html>

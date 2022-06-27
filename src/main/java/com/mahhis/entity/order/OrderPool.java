@@ -63,11 +63,12 @@ public class OrderPool {
 
         Map<String, Map<Long, Double>> bank__cardNumber = pool.get(countryName);
         Map<Long, Double> cardNumber__sum = bank__cardNumber.get(bankName);
-        cardNumber__sum.put(cardNumber, 0.0);
+        cardNumber__sum.remove(cardNumber);
         User user;
         try {
             Order order = orderService.findByCardNumberGetter(cardNumber);
             order.setComplete(true);
+            order.setSumToComplete(0.0);
             orderService.updateOrder(order);
             user = order.getUser();
         } catch (ServiceException e) {

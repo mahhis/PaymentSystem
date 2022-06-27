@@ -45,7 +45,7 @@ public class TransactionServiceImpl implements TransactionService {
 
         Map<Long, Double> tmpVal = orderPool.pool.get(transaction.getSenderCountry()).get(transaction.getBankNameSender());
         Iterator<Long> it = tmpVal.keySet().iterator();
-        while (it.hasNext() && transaction.getSum() > 0) {
+        while (it.hasNext() && transaction.getSum() >= 0) {
             Long m = it.next();
             long tmpCardNumberGetter = m;
             double tmpSum =  tmpVal.get(m);
