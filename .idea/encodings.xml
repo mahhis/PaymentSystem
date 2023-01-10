@@ -17,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/.gitignore" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/Procfile" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/ToDo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bin/.gitignore" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/local_en.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/locale.properties" charset="UTF-8" />
@@ -27,6 +28,7 @@
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/completedTransactionsPage.jsp" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signInPage.jsp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/system.properties" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/system.prporties" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/target/classes/db.properties" charset="UTF-8" />
     <file url="jar://$USER_HOME$/Downloads/mysql-connector-java-8.0.28/mysql-connector-java-8.0.28.jar!/com/mysql/cj/CoreSession.class" charset="GBK" />
     <file url="jar://$USER_HOME$/Downloads/mysql-connector-java-8.0.28/mysql-connector-java-8.0.28.jar!/com/mysql/cj/NativeSession.class" charset="GBK" />
