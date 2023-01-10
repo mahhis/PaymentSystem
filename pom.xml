@@ -8,6 +8,7 @@
     <groupId>com.mahhis</groupId>
     <artifactId>PaymentSystem</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
@@ -71,29 +72,59 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.28</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-template-freemarker</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
-        <finalName>PaymentSystemMaven</finalName>
+        <finalName>PaymentSystem</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>tomcat-server</server>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.2</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
                         <goals><goal>copy</goal></goals>
-                            <configuration>
-                                <artifactItems>
-                                    <artifactItem>
-                                        <groupId>com.github.mahhis</groupId>
-                                        <artifactId>PaymentSystemMaven</artifactId>
-                                        <version>8.5.31.0</version>
-                                        <destFileName>PaymentSystemMaven.jar</destFileName>
-                                    </artifactItem>
-                                </artifactItems>
-                            </configuration>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.heroku</groupId>
+                                    <artifactId>webapp-runner</artifactId>
+                                    <version>9.0.70.0</version>
+                                    <destFileName>webapp-runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
