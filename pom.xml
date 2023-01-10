@@ -88,9 +88,9 @@
                                 <artifactItems>
                                     <artifactItem>
                                         <groupId>com.github.mahhis</groupId>
-                                        <artifactId>webapp-runner</artifactId>
+                                        <artifactId>PaymentSystemMaven</artifactId>
                                         <version>8.5.31.0</version>
-                                        <destFileName>webapp-runner.jar</destFileName>
+                                        <destFileName>PaymentSystemMaven.jar</destFileName>
                                     </artifactItem>
                                 </artifactItems>
                             </configuration>
