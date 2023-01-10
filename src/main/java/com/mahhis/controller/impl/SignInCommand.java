@@ -31,6 +31,7 @@ public class SignInCommand implements Command {
 
 		UserService userService = FactoryService.getInstance().getUserService();
 		CardService cardService = FactoryService.getInstance().getCardService();
+		System.out.println(session.getId());
 
 		try {
 			if(userService.authorisation(login, password)){

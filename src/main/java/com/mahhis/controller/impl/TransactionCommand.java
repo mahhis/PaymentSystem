@@ -73,7 +73,6 @@ public class TransactionCommand implements Command {
         OrderService orderService = FactoryService.getInstance().getOrderService();
 
 
-
         try {
             user = userService.findByLogin(login);
             transactionService.choiceDirectTranslationAndTransfer(transaction);

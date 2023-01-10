@@ -31,6 +31,8 @@ public class GoToTransactionListPage implements Command {
 
         User user;
         List<Order> userOrders = new ArrayList<>();
+        System.out.println(session.getAttribute(ParameterName.LOGIN));
+        System.out.println(session.getId());
         try {
             user = userService.findByLogin(login);
             userOrders = orderService.findAllFromUser(user);
