@@ -21,7 +21,7 @@ public class SignUpCommand implements Command{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-		System.out.println("SU");
+		System.out.println("SU1");
 		String login = request.getParameter(ParameterName.LOGIN);
 		String email = request.getParameter(ParameterName.EMAIL);
 		String password = request.getParameter(ParameterName.PASSWORD);
