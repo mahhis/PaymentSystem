@@ -14,7 +14,7 @@
 <div class="container">
 
 
-    <form action="/PaymentSystem/src/main/java/com/mahhis/controller/Controller" method="post">
+    <form action="/Controller" method="post">
 
         <input type="hidden" name="command" value="SignIn">
         Login
