@@ -14,7 +14,7 @@
 
 <div class="container">
 
-    <form action="Controller" method ="post">
+    <form action="<%=request.getContextPath()%>/Controller" method ="post">
 
         <input type="hidden" name="command" value="SignUp">
         Email
