@@ -42,7 +42,7 @@
 
 </div>--%>
 
-<form action="Controller" method ="post">
+<form action="<%=request.getContextPath()%>/Controller" method ="post">
 
     <input type="hidden" name="command" value="Transaction"><br>
 
