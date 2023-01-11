@@ -105,7 +105,6 @@ public final class ConnectionPool {
             rs.close();
         } catch (SQLException e) {
             throw new ConnectionPoolException("rs didn't close ", e);
-
         }
         try {
             st.close();
