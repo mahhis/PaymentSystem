@@ -24,6 +24,7 @@ public class SignInCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
+		System.out.println("SI");
 		String login = request.getParameter(ParameterName.LOGIN);
 		String password = request.getParameter(ParameterName.PASSWORD);
 		HttpSession session = request.getSession();
@@ -31,7 +32,6 @@ public class SignInCommand implements Command {
 
 		UserService userService = FactoryService.getInstance().getUserService();
 		CardService cardService = FactoryService.getInstance().getCardService();
-		System.out.println(session.getId());
 
 		try {
 			if(userService.authorisation(login, password)){
