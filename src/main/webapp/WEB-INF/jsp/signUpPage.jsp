@@ -14,7 +14,7 @@
 
 <div class="container">
 
-    <form action="${pageContext.request.contextPath}/Controller" method ="post">
+    <form action="/PaymentSystem/src/main/java/com/mahhis/controller/Controller" method ="post">
 
         <input type="hidden" name="command" value="SignUp">
         Email
