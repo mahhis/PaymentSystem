@@ -97,10 +97,15 @@ public class UserDAOImpl implements UserDAO {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         String sql = FIND_USER_BY_ID;
+        System.out.println(13);
         try {
+            System.out.println(14);
             connection = connectionPool.takeConnection();
+            System.out.println(15);
             statement = connection.prepareStatement(sql);
+            System.out.println(16);
             statement.setInt(1, idUsers);
+            System.out.println(17);
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 user = BuilderFactory.getUserBuild().buildUser(resultSet);
@@ -113,6 +118,7 @@ public class UserDAOImpl implements UserDAO {
         }
         finally {
             try {
+                System.out.println(18);
                 connectionPool.closeConnection(connection, statement, resultSet);
             } catch (ConnectionPoolException e) {
                 e.printStackTrace();

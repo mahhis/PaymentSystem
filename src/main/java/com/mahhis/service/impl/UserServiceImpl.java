@@ -35,11 +35,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByLogin(String login) throws ServiceException {
+        System.out.println(11);
         FactoryDAO factoryDAO = FactoryDAO.getInstance();
         UserDAO userDAO = factoryDAO.getUserDAO();
         User user;
 
         try {
+            System.out.println(12);
             user = userDAO.findByLogin(login);
         } catch (DAOException e) {
             throw new ServiceException(e);
