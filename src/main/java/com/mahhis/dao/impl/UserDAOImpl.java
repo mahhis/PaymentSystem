@@ -97,7 +97,7 @@ public class UserDAOImpl implements UserDAO {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         String sql = FIND_USER_BY_ID;
-        System.out.println(13);
+
         try {
             System.out.println(14);
             connection = connectionPool.takeConnection();
@@ -107,6 +107,7 @@ public class UserDAOImpl implements UserDAO {
             statement.setInt(1, idUsers);
             System.out.println(17);
             resultSet = statement.executeQuery();
+            System.out.println("234234"+resultSet.toString());
             if (resultSet.next()) {
                 user = BuilderFactory.getUserBuild().buildUser(resultSet);
             } else {
@@ -134,12 +135,19 @@ public class UserDAOImpl implements UserDAO {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         String sql = FIND_USER_BY_LOGIN;
+        System.out.println(13);
         try {
+            System.out.println(14);
             connection = connectionPool.takeConnection();
+            System.out.println(15);
             statement = connection.prepareStatement(sql);
+            System.out.println(16);
             statement.setString(1, userLogin);
+            System.out.println(17);
             resultSet = statement.executeQuery();
+            System.out.println(18);
             if (resultSet.next()) {
+                System.out.println(19);
                 user = BuilderFactory.getUserBuild().buildUser(resultSet);
             } else {
                 user = new User();
@@ -150,6 +158,7 @@ public class UserDAOImpl implements UserDAO {
         }
         finally {
             try {
+                System.out.println(20);
                 connectionPool.closeConnection(connection, statement, resultSet);
             } catch (ConnectionPoolException e) {
                 e.printStackTrace();
