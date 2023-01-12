@@ -30,14 +30,17 @@ public class SignUpCommand implements Command{
 		user.setEmail(email);
 		user.setLogin(login);
 		user.setPassword(password);
+		System.out.println("SU2");
 
 		UserService userService = FactoryService.getInstance().getUserService();
 		CardService cardService = FactoryService.getInstance().getCardService();
 
 		try {
+			System.out.println("SU3");
 			userService.registration(user);
 			List<Card> userCards;
 			userCards = cardService.findAll(user);
+			System.out.println("SU4");
 
 			request.getSession().setAttribute(ParameterName.LOGIN, user.getLogin());
 			request.setAttribute(ParameterName.CARDS, userCards);
