@@ -130,9 +130,13 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User findByLogin(String userLogin) throws DAOException {
+        System.out.println(1111);
         User user = null;
+        System.out.println(1111324);
         Connection connection = null;
+        System.out.println(111412341);
         PreparedStatement statement = null;
+        System.out.println(1111534523);
         ResultSet resultSet = null;
         String sql = FIND_USER_BY_LOGIN;
         System.out.println(13);
