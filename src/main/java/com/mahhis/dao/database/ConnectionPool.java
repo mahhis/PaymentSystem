@@ -102,7 +102,7 @@ public final class ConnectionPool {
 
     public void closeConnection(Connection con, Statement st, ResultSet rs) throws ConnectionPoolException {
         try {
-            System.out.println(20);
+            System.out.println(277);
             rs.close();
         } catch (SQLException e) {
             throw new ConnectionPoolException("rs didn't close ", e);
