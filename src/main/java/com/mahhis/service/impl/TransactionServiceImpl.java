@@ -43,8 +43,11 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public void choiceDirectTranslationAndTransfer(Transaction transaction) throws ServiceException {
 
+        System.out.println("s1");
         Map<Long, Double> tmpVal = orderPool.pool.get(transaction.getSenderCountry()).get(transaction.getBankNameSender());
+        System.out.println("s2");
         Iterator<Long> it = tmpVal.keySet().iterator();
+        System.out.println("s3");
         while (it.hasNext() && transaction.getSum() >= 0) {
             Long m = it.next();
             long tmpCardNumberGetter = m;
