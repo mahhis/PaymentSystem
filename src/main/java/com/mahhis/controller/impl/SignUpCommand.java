@@ -46,8 +46,8 @@ public class SignUpCommand implements Command{
 			System.out.println("SU5");
 			request.setAttribute(ParameterName.CARDS, userCards);
 			System.out.println("SU6");
-			System.out.println(CommandName.SIGN_IN_PAGE);
-			response.sendRedirect(CommandName.SIGN_IN_PAGE);
+			System.out.println(CommandName.MAIN_PAGE);
+			response.sendRedirect(CommandName.MAIN_PAGE);
 			System.out.println("SU7");
 		} catch (ServiceException e) {
 			e.printStackTrace();
