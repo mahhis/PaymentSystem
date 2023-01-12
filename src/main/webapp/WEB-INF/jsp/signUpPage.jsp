@@ -16,7 +16,6 @@
 
     <form action="<%=request.getContextPath()%>/Controller" method ="post">
 
-        ${pageContext.request.contextPath}/Controller
         <input type="hidden" name="command" value="SignUp">
         Email
         <input type="text" name="email" value=""/>

@@ -21,7 +21,6 @@ public class SignUpCommand implements Command{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-		System.out.println("SU1");
 		String login = request.getParameter(ParameterName.LOGIN);
 		String email = request.getParameter(ParameterName.EMAIL);
 		String password = request.getParameter(ParameterName.PASSWORD);
@@ -30,25 +29,19 @@ public class SignUpCommand implements Command{
 		user.setEmail(email);
 		user.setLogin(login);
 		user.setPassword(password);
-		System.out.println("SU2");
+
 
 		UserService userService = FactoryService.getInstance().getUserService();
 		CardService cardService = FactoryService.getInstance().getCardService();
 
 		try {
-			System.out.println("SU3");
 			userService.registration(user);
 			List<Card> userCards;
 			userCards = cardService.findAll(user);
-			System.out.println("SU4");
 
 			request.getSession().setAttribute(ParameterName.LOGIN, user.getLogin());
-			System.out.println("SU5");
 			request.setAttribute(ParameterName.CARDS, userCards);
-			System.out.println("SU6");
-			System.out.println(CommandName.MAIN_PAGE);
 			response.sendRedirect(CommandName.MAIN_PAGE);
-			System.out.println("SU7");
 		} catch (ServiceException e) {
 			e.printStackTrace();
 		}
