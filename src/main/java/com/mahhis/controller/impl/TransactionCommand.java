@@ -74,10 +74,14 @@ public class TransactionCommand implements Command {
 
 
         try {
+            System.out.println("T1");
             user = userService.findByLogin(login);
+            System.out.println("T2");
             transactionService.choiceDirectTranslationAndTransfer(transaction);
+            System.out.println("T3");
             transactionService.registerOrder(user, numberCardGetter, sum, bankNameGetter, getterCountry);
 
+            System.out.println("T4");
             List<Order> userOrders = new ArrayList<>();
             user = userService.findByLogin(login);
             userOrders = orderService.findAllFromUser(user);
